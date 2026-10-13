@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трекер звичок</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Трекер щоденних звичок</h1>
+    </header>
+    
+    <main>
+        <section class="add-form-section">
+            <h2>Додати нову звичку</h2>
+            <form id="habit-form">
+                <label for="habit-name">Назва звички:</label>
+                <!-- pattern: мінімум 3 літери/цифри -->
+                <input type="text" id="habit-name" required pattern="^.{3,}$" placeholder="Наприклад: Читання">
+                
+                <label for="habit-desc">Опис:</label>
+                <input type="text" id="habit-desc" required>
+                
+                <button type="submit">Додати</button>
+            </form>
+            <div id="form-error" class="error-msg" style="display: none;">Помилка валідації!</div>
+        </section>
+
+        <section class="entity-list-section">
+            <h2>Мої звички</h2>
+            <div id="habits-container" class="habits-grid">
+                <!-- Сюди будуть динамічно додаватись звички через JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2026 Трекер звичок</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
